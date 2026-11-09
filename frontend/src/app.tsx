@@ -91,11 +91,16 @@ function App() {
                   </button>
                 </div>
 
-                <div className="security-panel">
-                  <h3>🚨 Threat Reports</h3>
-                  <p>Community-based website threat reporting.</p>
-                  <p>Integration pending.</p>
-                </div>
+               <div className="security-panel">
+  <h3>🚨 Threat Reports</h3>
+  <p>Community-based website threat reporting.</p>
+  <button
+    className="primary-button"
+    onClick={() => setActivePage("community")}
+  >
+    Open Threat Reports
+  </button>
+</div>
 
                 <div className="security-panel">
                   <h3>📊 Scan History</h3>
