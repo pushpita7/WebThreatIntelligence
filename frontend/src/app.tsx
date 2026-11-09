@@ -3,6 +3,7 @@ import { useState } from "react";
 import SecurityPanel from "./components/SecurityPanel";
 import PhishingPanel from "./components/PhishingPanel";
 import HistoryPanel from "./components/HistoryPanel";
+import CommunityReporting from "./components/CommunityReporting";
 
 function App() {
   const [activePage, setActivePage] = useState("dashboard");
@@ -31,6 +32,9 @@ function App() {
           <button onClick={() => setActivePage("history")}>
             Scan History
           </button>
+  <button onClick={() => setActivePage("community")}>
+  Community Reports
+</button>
         </nav>
       </header>
 
@@ -125,6 +129,11 @@ function App() {
             <HistoryPanel />
           </section>
         )}
+        {activePage === "community" && (
+  <section className="security-section">
+    <CommunityReporting />
+  </section>
+)}
       </main>
 
       <footer>

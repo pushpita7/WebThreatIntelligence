@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+﻿from fastapi import APIRouter, HTTPException
 from app.schemas.security import SecurityRequest, SecurityResponse
 from app.services.ssl_checker import check_website_security
 

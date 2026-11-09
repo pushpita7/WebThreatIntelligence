@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { checkWebsiteSecurity } from "./services/securityApi";
 
 interface SecurityResponse {
