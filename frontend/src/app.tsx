@@ -1,5 +1,8 @@
+
 import { useState } from "react";
 import SecurityPanel from "./components/SecurityPanel";
+import PhishingPanel from "./components/PhishingPanel";
+import HistoryPanel from "./components/HistoryPanel";
 
 function App() {
   const [activePage, setActivePage] = useState("dashboard");
@@ -19,6 +22,14 @@ function App() {
 
           <button onClick={() => setActivePage("security")}>
             Website Security
+          </button>
+
+          <button onClick={() => setActivePage("phishing")}>
+            Phishing Detection
+          </button>
+
+          <button onClick={() => setActivePage("history")}>
+            Scan History
           </button>
         </nav>
       </header>
@@ -67,8 +78,13 @@ function App() {
 
                 <div className="security-panel">
                   <h3>🎣 Phishing Detection</h3>
-                  <p>URL threat detection module.</p>
-                  <p>Integration pending.</p>
+                  <p>Analyze URLs for suspicious patterns and phishing indicators.</p>
+                  <button
+                    className="primary-button"
+                    onClick={() => setActivePage("phishing")}
+                  >
+                    Open Phishing Scanner
+                  </button>
                 </div>
 
                 <div className="security-panel">
@@ -80,7 +96,12 @@ function App() {
                 <div className="security-panel">
                   <h3>📊 Scan History</h3>
                   <p>View previous website security scan records.</p>
-                  <p>Integration pending.</p>
+                  <button
+                    className="primary-button"
+                    onClick={() => setActivePage("history")}
+                  >
+                    View History
+                  </button>
                 </div>
               </div>
             </section>
@@ -90,6 +111,18 @@ function App() {
         {activePage === "security" && (
           <section className="security-section">
             <SecurityPanel />
+          </section>
+        )}
+
+        {activePage === "phishing" && (
+          <section className="security-section">
+            <PhishingPanel />
+          </section>
+        )}
+
+        {activePage === "history" && (
+          <section className="security-section">
+            <HistoryPanel />
           </section>
         )}
       </main>

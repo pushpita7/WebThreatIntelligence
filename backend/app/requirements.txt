@@ -1,4 +1,7 @@
+
 fastapi
-uvicorn
+uvicorn[standard]
 cryptography
 pydantic
+sqlalchemy
+certifi

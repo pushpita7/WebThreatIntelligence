@@ -1,4 +1,5 @@
-import type { SecurityRequest, SecurityResponse } from "../types/security";
+
+import type { SecurityRequest, SecurityResponse } from "./types/security";
 
 const API_URL = "http://127.0.0.1:8000/api/scan/security";
 
@@ -15,7 +16,6 @@ export async function checkWebsiteSecurity(
 
   if (!response.ok) {
     const errorData = await response.json().catch(() => null);
-
     throw new Error(
       errorData?.detail || "Unable to check website security."
     );
