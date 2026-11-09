@@ -1,0 +1,7 @@
+
+fastapi
+uvicorn[standard]
+cryptography
+pydantic
+sqlalchemy
+certifi
